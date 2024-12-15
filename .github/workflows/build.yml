@@ -31,7 +31,7 @@ jobs:
         uses: actions/checkout@v3
  
       - name: Install Rust
-        uses: dtolnay/rust-toolchain@nightly
+        uses: dtolnay/rust-toolchain@stable
         with:
           targets: "${{ matrix.target }}"
  
@@ -65,7 +65,7 @@ jobs:
           tag_name: v1.0
           prerelease: false
           draft: false
-          files: "./target/${{ matrix.target }}/release/${PROJECT_NAME}${BIN_SUFFIX}"
+          files: "${{ github.workspace }}/target/${{ matrix.target }}/release/${PROJECT_NAME}${BIN_SUFFIX}"
           generate_release_notes: true
           name: rust-actix-sqlite-api
           body: |
