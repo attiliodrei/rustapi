@@ -2,7 +2,7 @@ name: Build
 on: [push]
 env:
   # The project name specified in your Cargo.toml
-  PROJECT_NAME: <insert-name>
+  PROJECT_NAME: rustapi
 jobs:
   build:
     # Set the job to run on the platform specified by the matrix below
@@ -39,7 +39,7 @@ jobs:
         uses: Swatinem/rust-cache@v2
  
       - name: Build Binary
-        run: cargo build --verbose  --release --target ${{ matrix.target }}
+        run: cargo build --verbose --locked  --release --target ${{ matrix.target }}
  
       - name: Release Binary
         shell: bash
@@ -57,4 +57,4 @@ jobs:
           BIN_RELEASE_VERSIONED="${PROJECT_NAME}-${{ github.ref_name }}-${{ matrix.name }}${BIN_SUFFIX}"
  
           # Move the built binary where you want it
-          mv "${BIN_OUTPUT}" "./<your-destination>/${BIN_RELEASE}"
+          mv "${BIN_OUTPUT}" "./tmp/${BIN_RELEASE}"
