@@ -1,0 +1,4 @@
+[env]
+DATABASE_URL = { relative = true, value = "sqlite3://users.db" }
+SQLX_OFFLINE=true
+
