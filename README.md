@@ -11,7 +11,7 @@ DATABASE_URL=sqlite:users.db
 ```bash
 curl http://localhost:8080/users
 ```
-### Get all User by id
+### Get User by id
 
 ```bash
 curl     http://localhost:8080/users/1
