@@ -65,7 +65,7 @@ jobs:
           tag_name: v1.0
           prerelease: false
           draft: false
-          files: ${{ BIN_RELEASE }}
+          files: "${BIN_OUTPUT}"
           generate_release_notes: true
           name: rust-actix-sqlite-api
           body: |
