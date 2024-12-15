@@ -52,7 +52,7 @@ jobs:
           # The built binary output location
           BIN_OUTPUT="${{ github.workspace }}/target/${{ matrix.target }}/release/${PROJECT_NAME}${BIN_SUFFIX}"
           if [[ "${{ matrix.runner }}" == "windows-latest" ]]; then
-              BIN_OUTPUT="${{ github.workspace }}\target\${{ matrix.target }}\release\${PROJECT_NAME}${BIN_SUFFIX}"
+              BIN_OUTPUT="${{ github.workspace }}\target\${{ matrix.target }}\release\rust-actix-sqlite-api${BIN_SUFFIX}"
           fi
  
           # Define a better name for the final binary
