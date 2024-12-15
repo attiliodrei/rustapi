@@ -30,7 +30,6 @@ impl DatabaseConnection {
         sqlx::migrate!("./migrations")
             .run(&pool)
             .await?;
-
         Ok(DatabaseConnection { pool })
     }
 }
