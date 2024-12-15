@@ -6,6 +6,7 @@ use actix_web::{
     HttpResponse,
     middleware::Logger
 };
+
 use sqlx::sqlite::{SqlitePool, SqlitePoolOptions};
 use std::env;
 use std::sync::Arc;
