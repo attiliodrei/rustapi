@@ -32,7 +32,6 @@ impl DatabaseConnection {
             .await?;
 
         Ok(DatabaseConnection { pool })
-        
     }
 }
 
