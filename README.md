@@ -1,10 +1,18 @@
 # rustapi
 rustapi
 
-
+### Get all User
+```bash
 curl http://localhost:8080/users
+```
+### Get all User by id
+
+```bash
 curl     http://localhost:8080/users/1
-curl     http://localhost:8080/users/2
+```
+
+### add a User
+```bash
 curl -X POST http://localhost:8080/users \  
      -H "Content-Type: application/json" \
      -d '{
@@ -12,5 +20,11 @@ curl -X POST http://localhost:8080/users \
          "email": "drei@example.com"
      }'
 
-Delete a User
+```
+### Delete a User
+```bash
 curl -X DELETE http://localhost:8080/users/1
+```
+
+
+
