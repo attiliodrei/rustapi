@@ -65,7 +65,7 @@ jobs:
           tag_name: v1.0
           prerelease: false
           draft: false
-          files: "${CARGO_RUSTC_CURRENT_DIR}/target/${{ matrix.target }}/release/${PROJECT_NAME}${BIN_SUFFIX}"
+          files: "./target/${{ matrix.target }}/release/${PROJECT_NAME}${BIN_SUFFIX}"
           generate_release_notes: true
           name: rust-actix-sqlite-api
           body: |
