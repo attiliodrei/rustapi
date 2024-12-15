@@ -19,7 +19,6 @@ curl -X POST http://localhost:8080/users \
          "username": "drei",
          "email": "drei@example.com"
      }'
-
 ```
 ### Delete a User
 ```bash
