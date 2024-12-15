@@ -36,6 +36,7 @@ impl DatabaseConnection {
 }
 
 
+
 // Application state with database connection
 #[derive(Clone)]
 pub struct AppState {
