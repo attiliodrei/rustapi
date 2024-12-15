@@ -1,2 +1,0 @@
-[env]
-DATABASE_URL = { relative = true, value = "sqlite:users.db" }
