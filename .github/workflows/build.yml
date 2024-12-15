@@ -2,7 +2,7 @@ name: Build
 on: [push]
 env:
   # The project name specified in your Cargo.toml
-  PROJECT_NAME: rustapi
+  PROJECT_NAME: rust-actix-sqlite-api
 jobs:
   build:
     # Set the job to run on the platform specified by the matrix below
@@ -50,14 +50,14 @@ jobs:
           fi
  
           # The built binary output location
-          BIN_OUTPUT="target/${{ matrix.target }}/release/${PROJECT_NAME}${BIN_SUFFIX}"
+          BIN_OUTPUT="${{ github.workspace }}/target/${{ matrix.target }}/release/${PROJECT_NAME}${BIN_SUFFIX}"
  
           # Define a better name for the final binary
-          BIN_RELEASE="${PROJECT_NAME}-${{ matrix.name }}${BIN_SUFFIX}"
+          BIN_RELEASE="${{ github.workspace }}/${PROJECT_NAME}-${{ matrix.name }}${BIN_SUFFIX}"
           BIN_RELEASE_VERSIONED="${PROJECT_NAME}-${{ github.ref_name }}-${{ matrix.name }}${BIN_SUFFIX}"
  
           # Move the built binary where you want it
-          # mv "${BIN_OUTPUT}" "${BIN_RELEASE}"
+          mv "${BIN_OUTPUT}" "${BIN_RELEASE}"
       - name: Create Release
         uses: softprops/action-gh-release@de2c0eb89ae2a093876385947365aca7b0e5f844 # v1
         with:
@@ -65,7 +65,7 @@ jobs:
           tag_name: 1.0
           prerelease: false
           draft: false
-          files: "${{ github.workspace }}/target/${{ matrix.target }}/release/rust-actix-sqlite-api*"
+          files: "${{ github.workspace }}/rust-actix-sqlite-api*"
           generate_release_notes: true
           name: rust-actix-sqlite-api
           body: |
