@@ -1,6 +1,12 @@
 # rustapi
 rustapi
 
+
+### create db 
+sqlx database setup
+
+DATABASE_URL=sqlite:users.db
+
 ### Get all User
 ```bash
 curl http://localhost:8080/users
