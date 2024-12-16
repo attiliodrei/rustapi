@@ -62,14 +62,13 @@ jobs:
           # Move the built binary where you want it
           mv "${BIN_OUTPUT}" "${BIN_RELEASE}"
       - name: Create Release
-        shell: bash
-        uses: softprops/action-gh-release@de2c0eb89ae2a093876385947365aca7b0e5f844 # v1
+        uses: softprops/action-gh-release@v2
         with:
           #token: ${{ secrets.GH_OWNER_TOKEN }}
           tag_name: 1.0
           prerelease: false
           draft: false
-          files: "${{ github.workspace }}/rust-actix-sqlite-api*"
+          files: "./rust-actix-sqlite-api*"
           generate_release_notes: true
           name: rust-actix-sqlite-api
           body: |
